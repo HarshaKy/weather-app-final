@@ -2,6 +2,9 @@ const path = require('path')
 const express = require('express')
 const hbs = require('hbs')
 
+const geocode = require('./utils/geocode.js')
+const forecast = require('./utils/forecast.js')
+
 const app = express()
 
 // Define paths for express
@@ -40,24 +43,51 @@ app.get('/help', (req, res) => {
 })
 
 app.get('/weather', (req, res) => {
-  res.send({
-	location: "Bangalore",
-	forecast: "its gon rain today"
-  })
-})
-
-app.get('/products', (req, res) => {
-	if (!req.query.search) {
+	if (!req.query.address) {
 		return res.send({
 			error: 'You must provide a search term.'
 		})
 	}
 
-	console.log(req.query.search)
-	res.send({
-		products: []
+	geocode(req.query.address, (error, {lat, lng, location}) => {
+		if (error) {
+			return res.send({
+				error
+			})
+		}
+	
+		forecast(lat, lng, (error, forecastData) => {
+			if (error) {
+				return res.send({
+					error
+				})
+			}
+	
+			res.send({
+				location,
+				forecastData
+			})
+		})
 	})
+	// console.log(req.query.address)
+	// res.send({
+	// 	location: req.query.address,
+	// 	forecast: 'it gon rain'
+	// })
 })
+
+// app.get('/products', (req, res) => {
+// 	if (!req.query.search) {
+// 		return res.send({
+// 			error: 'You must provide a search term.'
+// 		})
+// 	}
+
+// 	console.log(req.query.search)
+// 	res.send({
+// 		products: []
+// 	})
+// })
 
 app.get('/help/*', (req, res) => {
 	res.render('404', {
