@@ -8,15 +8,20 @@ Deployed on Heroku:
 
 Npm  
   download and install npm form here https://nodejs.org/en/  
-  Windows command line:  
+  command line / terminal:  
     
-	cd file_directory  
+	cd file_directory
     
     npm install
 
-Running the app:  
-  Windows command line:  
+Running the app in dev mode:  
+  command line / terminal:  
     
-	cd file_directory  
+	cd file_directory
    
     npm run dev
+
+After running:
+  Open browser and type in the URL:
+    
+	http://localhost:3000/
