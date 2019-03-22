@@ -1,23 +1,31 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title>Weather</title>
+	<head>
+		<meta charset="utf-8">
+		<title>Weather</title>
 	<link rel="icon" href="/img/icon.png">
-    <link rel="stylesheet" href="/css/styles.css">
-    <script src="/js/app.js" charset="utf-8"></script>
-  </head>
-  <body>
+		<link rel="stylesheet" href="/css/styles.css">
+		
+	</head>
+	<body>
 
-	  <div class="mainContent">
-		  {{>header}}
+		<div class="mainContent">
+			{{>header}}
 
-		  <p>Use this site to get your weather!</p>
-	  </div>
+			<p>Use this site to get your weather!</p>
 
-    
-    {{>footer}}
-  </body>
+			<form action="">
+				<input type="text" placeholder="Location">
+				<button>Search</button>
+			</form>
+
+		</div>
+
+		
+		{{>footer}}
+
+		<script src="/js/app.js" charset="utf-8"></script>
+	</body>
 
 
 </html>
