@@ -21,7 +21,7 @@ Running the app in dev mode:
    
     npm run dev
 
-After running:
-  Open browser and type in the URL:
+After running,
+  open browser and type in the URL:
     
 	http://localhost:3000/
