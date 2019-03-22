@@ -7,15 +7,16 @@ Deployed on Heroku:
 
 
 Npm  
-	download and install npm form here https://nodejs.org/en/  
-	command line:  
-		
-		cd file_directory  
-		npm install
+  download and install npm form here https://nodejs.org/en/  
+  Windows command line:  
+    
+	cd file_directory  
+    
+    npm install
 
-
-Running the app in dev mode:
-	command line:
-		
-		cd file_directory
-		npm run dev
+Running the app:  
+  Windows command line:  
+    
+	cd file_directory  
+   
+    npm run dev
